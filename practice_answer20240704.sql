@@ -44,8 +44,7 @@ FROM
     countries 
 WHERE 
     life_expectancy >= 56 
-    AND 
-        76 >= life_expectancy
+    AND  76 >= life_expectancy
 ;
 
 -- 問6
@@ -56,8 +55,7 @@ FROM
     cities 
 WHERE 
     country_code = 'NLB' 
-    OR 
-        country_code = 'ALB' OR country_code = 'DZA'
+    OR country_code = 'ALB' OR country_code = 'DZA'
 ;
 
 -- 問7
@@ -118,8 +116,7 @@ FROM
     countries 
 WHERE 
     indep_year < '1990' 
-    OR 
-        population > '100000'
+    OR population > '100000'
 ;
 
 -- 問13
@@ -130,8 +127,7 @@ FROM
     countries 
 WHERE 
     indep_year < '1990' 
-    AND 
-        (code = 'DZA' OR code = 'ALB')
+    AND (code = 'DZA' OR code = 'ALB')
 ;
 
 -- 問14
@@ -153,7 +149,7 @@ AS
     population;
 
 -- 問16
--- 平均寿命が短い順に国名を表示LIKEださいRIGHTULLは表示させないでください。
+-- 平均寿命が短い順に国名を表示してださいNULLは表示させないでください。
 SELECT 
     name,life_expectancy 
 FROM    
@@ -165,7 +161,7 @@ ORDER BY
 ;
 
 -- 問17
--- 平均寿命が長LEFT名を表示させてください。ただLIKELは表示させないでください。
+-- 平均寿命が長い順に国名を表示させてください。ただしNULLは表示させないでください。
 SELECT 
     name,life_expectancy 
 FROM 
@@ -177,7 +173,7 @@ ORDER BY
 ;
 
 -- 問18
--- 平均寿命が長い順、独立記念日が新しLEFTを表示させてください。
+-- 平均寿命が長い順、独立記念日が新し順に国名を表示させてください。
 SELECT 
     name,life_expectancy,indep_year 
 FROM 
@@ -197,7 +193,7 @@ FROM
 ;
 
 -- 問20
--- 国名が長いものから順に国名と国名RIGHT力してください。
+-- 国名が長いものから順に国名と国名の長さを出力してください。
 SELECT 
     name,LENGTH(name) 
 FROM 
@@ -207,7 +203,7 @@ ORDER BY
 ;
 
 -- 問21
--- 全ての地方の平均寿命、平均人口を表示RIGHTLIKEULLもLEFT
+-- 全ての地方の平均寿命、平均人口を表示してください。
 SELECT 
     region,AVG(life_expectancy),AVG(population) 
 FROM 
@@ -219,7 +215,7 @@ ORDER BY
 ;
 
 -- 問22
--- 全ての地方の最長寿命、最大人LEFTしてくださLIKEULLも表示)
+-- 全ての地方の最長寿命、最大人口を表示してください。
 SELECT 
     region,MAX(life_expectancy),MAX(population) 
 FROM 
@@ -231,7 +227,7 @@ ORDER BY
 ;
 
 -- 問23
--- アジア大RIGHT小の表面積を表示してLEFT
+-- アジア大陸の中で最小の表面積を表示してさい。
 SELECT 
     Min(surface_area) 
 FROM 
@@ -241,7 +237,7 @@ WHERE
 ;
 
 -- 問24
--- アジア大陸の表面積の合LIKEしてください。
+-- アジア大陸の表面積の合計を表示してください。
 SELECT 
     SUM(surface_area) 
 FROM 
@@ -251,7 +247,7 @@ WHERE
 ;
 
 -- 問25
--- 全ての国と言語を表示してください。一つの国に複数言語があると思いますので同じ国名を言語数だけ出力してくだLEFT
+-- 全ての国と言語を表示してください。一つの国に複数言語があると思いますので同じ国名を言語数だけ出力してください。
 SELECT 
     countries.name,countrylanguages.language 
 FROM 
@@ -311,8 +307,7 @@ JOIN
     ) colm 
 ON 
     col.country_code = colm.country_code 
-AND 
-    col.percentage = colm.max_value
+    AND col.percentage = colm.max_value
 ;
 
 -- 問29
